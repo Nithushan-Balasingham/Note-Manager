@@ -12,6 +12,8 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [visible, setVisible] = useState(true);
+    const [visibleS, setVisibleS] = useState(true);
+
     const [confirmPassword, setConfirmPassword] = useState('');
 
     const dispatch = useDispatch();
@@ -107,8 +109,8 @@ const Login = () => {
                 <div className='flex flex-col m-3'>
                     <div className='flex justify-between'>
                     <label className=' font-bold w-fit'>Confirm Password</label>
-                      <div onClick={() => setVisible(!visible)} className='cursor-pointer '>
-                              {visible ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                      <div onClick={() => setVisibleS(!visibleS)} className='cursor-pointer '>
+                              {visibleS ? <VisibilityOffIcon /> : <VisibilityIcon />}
                           </div>
                     </div>               
                     <input 

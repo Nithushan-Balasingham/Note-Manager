@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import CryptoJS from 'crypto-js'; // Import CryptoJS
+import CryptoJS from 'crypto-js'; 
 
 const encryptData = (data, secretKey) => {
   const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), secretKey).toString();
@@ -21,8 +21,6 @@ console.log('Decrypted UserInfo:', userInfo);
 
 const initialState = {
   userInfo: userInfo,
-
-
   accessToken: localStorage.getItem('accessToken')
     ? decryptData(localStorage.getItem('accessToken'), process.env.REACT_APP_ENCRYPT_KEY)
     : null,

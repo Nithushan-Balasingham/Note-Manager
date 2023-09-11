@@ -94,8 +94,6 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
             return 'text-green-500';
           case 'personal':
             return 'text-red-500';
-          case 'pending':
-            return 'text-blue-600';
           default:
             return '';
         }

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useAddNoteMutation } from '../../slices/notesApiSlice';
 import axios from 'axios'
 
+import CryptoJS from 'crypto-js';
 
 
 const AddNote = () => {
@@ -11,7 +12,13 @@ const AddNote = () => {
     const dispatch = useDispatch();
     const [addNote, { isLoading }] = useAddNoteMutation();
     const { userInfo } = useSelector((state) => state.auth);
-
+    const decryptData = (encryptedData, secretKey) => {
+      const bytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+      const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+      return decryptedData;
+    };
+    
+  const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
 
     const [title, setTitle] = useState("");
     const [description,setDescription] = useState("")
@@ -35,7 +42,8 @@ const AddNote = () => {
      
     const handleSubmit=async(e)=>{
       e.preventDefault()
-      const accessToken = localStorage.getItem('accessToken');
+      const encryptedAccessToken = localStorage.getItem('accessToken');
+      const accessToken = decryptData(encryptedAccessToken, secretKey);      
       if (!accessToken) {
         throw new Error('Access token not found');
       }

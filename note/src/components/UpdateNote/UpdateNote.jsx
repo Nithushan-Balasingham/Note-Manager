@@ -54,7 +54,8 @@ export default function UpdateNote() {
       };
     const updatehandleInput = async(e)=>{
         e.preventDefault()
-        const accessToken = localStorage.getItem('accessToken');
+        const encryptedAccessToken = localStorage.getItem('accessToken');
+        const accessToken = decryptData(encryptedAccessToken, secretKey);         
         if (!accessToken) {
           throw new Error('Access token not found');
         }

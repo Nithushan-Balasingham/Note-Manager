@@ -49,7 +49,7 @@ const loginUser = asyncHandler(async(req,res)=>{
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
-                {expiresIn:"15m"}
+                {expiresIn:"50m"}
                 )
 
                 res.status(200).json({accessToken,userName:user.name,userEmail:email,userId:user.id})
@@ -87,7 +87,7 @@ const logoutUser = (req, res) => {
 
 const updateUser = asyncHandler(async (req, res) => {
     const id = req.params.id;
-    if (id.match(/^[0-9a-fA-F]{24}$/)) {
+    if (id.match(/^[0-9a-fA-F]{24}$/)) {// checks if the id consists of exactly 24 characters
       const user = await User.findById(id);
       if (!user) {
         res.status(404);
@@ -106,10 +106,10 @@ const updateUser = asyncHandler(async (req, res) => {
 const deleteUserAccount = asyncHandler(async (req, res) => {
     const userId = req.user.id;
     const userNotes = await Note.find({ user_id: userId });
-      for (const note of userNotes) {
-      await Note.findByIdAndDelete(note._id);
+      for (const note of userNotes) {// Loop is deleting each note one by one when  userId match note's document userId
+      await Note.findByIdAndDelete(note._id);// First note will be deleted
     }
-    await User.findByIdAndDelete(userId);
+    await User.findByIdAndDelete(userId);//Second data will be deleted
   
     res.json({ message: 'User account and associated books deleted successfully.' });
   });
