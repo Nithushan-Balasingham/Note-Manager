@@ -1,5 +1,6 @@
 # Note-Manager
 MERN
+
 A responsive website where users can create accounts and write notes under two categories using ReactJS, ExpressJS, MongoDB and  tailwindcss
 
 Dark and Light theme for all pages
