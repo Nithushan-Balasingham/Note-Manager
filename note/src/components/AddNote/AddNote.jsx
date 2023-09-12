@@ -69,10 +69,9 @@ const AddNote = () => {
             items-center 
             h-screen    
             w-full 
-            bg-gradient-to-b from-gray-500  via-gray-600 to-gray-800 
             tracking-wide'
     >
-        <div className=' shadow-2xl shadow:black bg-slate-300 p-4 rounded-lg '>
+        <div className=' shadow-2xl shadow:black  p-4 rounded-lg '>
         <div >
             <div className='flex flex-col items-center justify-center'>
                 <div>
@@ -131,7 +130,7 @@ const AddNote = () => {
                     Submit  
                     </button>
                     <p className=' flex items-center justify-center  gap-2 rounded-lg text-xl font-bold p-2 bg-green-400 m-2  w-fit text-center  hover:bg-rose-200 h-fit'>
-                    <Link className='flex items-center justify-center' to='/register' >Not have an Account?</Link>
+                    <Link className='flex items-center justify-center' to='/notes' >Back</Link>
                 </p>
                 </div>
                 

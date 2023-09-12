@@ -44,10 +44,9 @@ const Login = () => {
             items-center 
             h-screen    
             w-full 
-            tracking-wide
-            bg-gradient-to-b from-gray-500  via-gray-600 to-gray-800'
+            tracking-wide'
     >        
-    <div className=' text-[#1f2937] p-4 shadow-xl shadow-black rounded-lg bg-slate-500 '>
+    <div className=' text-[#1f2937] p-4 shadow-xl shadow-black rounded-lg '>
         <div >
             <div className='flex flex-col items-center justify-center'>
                 <div>
@@ -60,14 +59,14 @@ const Login = () => {
                     <h2 className='text-teal-400 text-3xl m-4 font-bold'>Sign-In</h2>
                 </div>
             </div>           
-            <form className='flex flex-col w-full bg-slate-300 rounded-lg' onSubmit={handleSubmit}>
+            <form className='flex flex-col w-full  rounded-lg' onSubmit={handleSubmit}>
 
                 <div className='flex flex-col m-3'>
                     <label className='m- font-bold w-fit'>Email</label>
                     <input 
                         type='email' 
                         placeholder='Enter your email' 
-                        className='w-250 px-4 py-2 border rounded-lg'
+                        className='w-250 px-4 py-2 border rounded-lg text-teal-400'
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -83,7 +82,7 @@ const Login = () => {
                     <input 
                         type={visible ? 'password' : 'text'}
                         placeholder='Enter your password' 
-                        className='w-250 px-4 py-2 border rounded-lg'
+                        className='w-250 px-4 py-2 border rounded-lg text-teal-400'
                         required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

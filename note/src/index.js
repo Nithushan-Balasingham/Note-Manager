@@ -7,16 +7,16 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { DarkModeContextProvider } from './context/darkModeContext';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <Provider store={store}>
-    <DarkModeContextProvider>
       <React.StrictMode>
         <BrowserRouter>
-          <App />
+            <App />
         </BrowserRouter>
       </React.StrictMode>
-    </DarkModeContextProvider>
   </Provider>
  
 );

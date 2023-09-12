@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import {Link, useNavigate, useParams} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../slices/authSlice';
 import { useLogoutMutation } from '../../slices/usersApiSlice';
 import CryptoJS from 'crypto-js';
+import { DarkModeContext } from "../../context/darkModeContext";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
 const Home = () => {
@@ -24,6 +26,8 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
   const[ own,SetOwn] = useState('')
   const [logoutApiCall] = useLogoutMutation();
   
+  const {active} = useContext(DarkModeContext);
+
   const logoutHandler = async () => {
     try {
       await logoutApiCall().unwrap();
@@ -102,8 +106,8 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
 }
   return (
     <div 
-      className=' w-full bg-gradient-to-b from-gray-500  via-gray-600 to-gray-800  items-center justify-center flex   md:h-screen xl:h-screen h-screen '>
-    <div className='flex flex-col justify-center items-center shadow-xl p-16 rounded-lg shadow-black/10  bg-gray-100'>
+      className=' w-full   items-center justify-center flex   md:h-screen xl:h-screen h-screen '>
+    <div className='flex flex-col justify-center items-center shadow-xl p-16 rounded-lg shadow-black/20  '>
       <h1 
         className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 text-5xl font-bold'>
         Home
@@ -123,6 +127,7 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
                   <div className='flex flex-col items-center justify-center'>
                   <p className='text-4xl text-blue-400 font-semibold m-2 '>{post.name}</p> 
                   <h4 className='text-2xl text-blue-400 font-semibold m-2 '>{post.email}</h4>
+                
                   <hr/>
                   <div className='flex flex-col items-center justify-center mt-6'>
                     <Link 

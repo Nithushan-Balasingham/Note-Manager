@@ -102,7 +102,7 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
   
 
   return (
-    <div className='w-full min-h-screen bg-gradient-to-b from-gray-500 via-gray-600 to-gray-800'>
+    <div className='w-full min-h-screen'>
       {notes.length ==0 ? 
       (
             <h2 className='flex items-center justify-center text-5xl  font-bold'>No Notes Found</h2>
@@ -121,10 +121,11 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
     {notes.length !==0 ? (
       notes.map((note) => (
         <div key={note._id} style={{ marginBottom: '20px' }} className='m-6'>
-          <div className="flex h-fit items-center justify-center ">
+          <div className="flex h-fit items-center justify-center text-black ">
           <div className="group h-96 w-full sm:w-full md:w-full lg:w-full xl:w-96 [perspective:1000px]">
               <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-200 rounded-xl">
+                <div 
+                  className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-r from-gray-500 from-30% via-slate-500 via-50% to-gray-300 to-90% rounded-xl">
                   <h1 className={'font-bold text-3xl'}>{note.title}</h1>
                   <h1 className={`font-bold text-3xl ${getChangeColor(note.category)}`}>{note.category}</h1>
                 </div>
@@ -149,10 +150,10 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
       ))) :(
         "" )}
     </div>
-    <div className='flex items-center justify-center text-5xl bg-'>
+    <div className='flex items-center justify-center text-5xl '>
     <button 
       onClick={handleClick}
-      className="bg-transparent hover:bg-blue-500 text-blue-200 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mb-4"
+      className="bg-transparent hover:bg-blue-500 text-blue-400 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mb-4"
     >
       Go Back
     </button>

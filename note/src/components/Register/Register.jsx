@@ -53,10 +53,9 @@ const Login = () => {
             items-center 
             h-screen 
             w-full 
-            bg-gradient-to-b from-gray-500  via-gray-600 to-gray-800 
             tracking-wide'
     >
-        <div className='shadow-xl shadow-black  bg-slate-500 text-[#1f2937] p-4 rounded-lg '>
+        <div className='shadow-xl shadow-black  text-[#1f2937] p-4 rounded-lg '>
         <div >
             <div className='flex flex-col items-center justify-center'>
                 <div>
@@ -69,7 +68,7 @@ const Login = () => {
                     <h2 className='text-teal-400 text-3xl m-4 font-bold'>Sign-Up</h2>
                 </div>
             </div>           
-            <form className='flex flex-col w-full bg-slate-300 rounded-lg' onSubmit={handleSubmit}>
+            <form className='flex flex-col w-full  rounded-lg' onSubmit={handleSubmit}>
                 <div className='flex flex-col m-3'>
                     <label className='m- font-bold w-fit'>Name</label>
                     <input 

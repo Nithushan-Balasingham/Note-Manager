@@ -74,12 +74,12 @@ export default function UpdateNote() {
       }
 
   return (
-    <div className='w-full h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-500 via-gray-600 to-gray-800'>
+    <div className='w-full h-screen flex flex-col items-center justify-center'>
         
       <h1 className='text-4xl text-green-400 m-4 relative '>Update Note</h1>
       <div className='flex items-center justify-center ' >
         
-        <form  className='flex flex-col bg-gray-300 rounded-2xl w-full  h-96 justify-center px-4 ' onSubmit={updatehandleInput}>
+        <form  className='flex flex-col  rounded-2xl shadow-xl shadow-black/100 w-full  h-96 justify-center px-4 ' onSubmit={updatehandleInput}>
             <div className='flex flex-col m-3'>
             <label className=' font-bold w-fit'>Title</label>
             <input 

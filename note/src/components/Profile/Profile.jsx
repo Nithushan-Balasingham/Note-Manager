@@ -42,7 +42,7 @@ export default function UpdateUser() {
    
 
   return (
-    <div className='flex flex-col items-center justify-center h-screen bg-gradient-to-b from-gray-500  via-gray-600 to-gray-800'>
+    <div className='flex flex-col items-center justify-center h-screen'>
        
 
     <h1 
@@ -50,7 +50,7 @@ export default function UpdateUser() {
     >
       Update User
     </h1>
-    <div className='flex flex-col bg-gray-200 items-center justify-center border p-4 rounded-lg m-6 relative  w-fit max-w-sm'>
+    <div className='flex flex-col border-none items-center justify-center shadow-xl shadow-black/20 p-4 rounded-lg m-6 relative  w-fit max-w-sm'>
       <form  className='flex flex-col  m-6' onSubmit={updatehandleInput}>
         <div className='flex flex-col m-3'>
           <label className=' font-bold w-fit text-2xl'>Name</label>

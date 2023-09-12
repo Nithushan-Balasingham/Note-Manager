@@ -9,12 +9,40 @@ import HomeNotes from './components/HomeNotes/HomeNotes';
 import AddNote from './components/AddNote/AddNote';
 import UpdateNote from './components/UpdateNote/UpdateNote';
 import NoteComp from './components/NoteComp/NoteComp';
+import { useContext, useEffect, useState } from 'react';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
 function App() {
+  const [toggleTheme, setToggleTheme] = useState(false); 
+
+  useEffect(() => {
+    if (toggleTheme) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [toggleTheme]);
+
+  const toggleDark = () => {
+    setToggleTheme(!toggleTheme);
+  };
+
   return (
-    <div className="app">
-      <Routes>
+    <div className={toggleTheme  ? "app dark":"app"}>
+      <div 
+        className='
+                  dark:bg-gradient-to-b from-gray-500  via-gray-600 to-gray-800 
+                  bg-gray-200 
+                  h-full
+                  '>
+                    <div className='relative'>
+                    <DarkModeIcon className=" cursor-pointer " onClick={toggleDark}/>
+                    </div>
+                   
+
+    
+        <Routes>
         <Route path='/' element ={<Login/>} />
         <Route path='/sign-in' element ={<Login/>} />
         <Route path='/register' element ={<Register/>} />
@@ -28,6 +56,9 @@ function App() {
           <Route path='notes/update/:id' element={<UpdateNote/>}/>
         </Route>
       </Routes>
+      </div>
+      
+     
     </div>
   );
 }
