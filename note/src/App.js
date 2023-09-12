@@ -9,7 +9,7 @@ import HomeNotes from './components/HomeNotes/HomeNotes';
 import AddNote from './components/AddNote/AddNote';
 import UpdateNote from './components/UpdateNote/UpdateNote';
 import NoteComp from './components/NoteComp/NoteComp';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
@@ -37,7 +37,7 @@ function App() {
                   h-full
                   '>
                     <div className='relative'>
-                    <DarkModeIcon className=" cursor-pointer " onClick={toggleDark}/>
+                    <DarkModeIcon className=" cursor-pointer dark:text-white" onClick={toggleDark}/>
                     </div>
                    
 

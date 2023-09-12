@@ -19,7 +19,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
   
-    const [register, { isLoading }] = useRegisterMutation();
+    const [register] = useRegisterMutation();
     const { userInfo } = useSelector((state) => state.auth);
 
 
@@ -55,17 +55,17 @@ const Login = () => {
             w-full 
             tracking-wide'
     >
-        <div className='shadow-xl shadow-black  text-[#1f2937] p-4 rounded-lg '>
+        <div className='shadow-xl shadow-black  text-[#1f2937] p-3 rounded-lg h-fit relative top-[-10px] '>
         <div >
             <div className='flex flex-col items-center justify-center'>
                 <div>
                     <h1 
-                        className='text-green-400 font-bold lg:text-4xl md:text-3xl text-4xl text-center m-4'
+                        className='text-green-400 font-bold lg:text-4xl md:text-3xl text-4xl text-center m-2'
                     >Welcome to Note Manager
                     </h1>
                 </div>
                 <div>
-                    <h2 className='text-teal-400 text-3xl m-4 font-bold'>Sign-Up</h2>
+                    <h2 className='text-teal-400 text-3xl m-2 font-bold'>Sign-Up</h2>
                 </div>
             </div>           
             <form className='flex flex-col w-full  rounded-lg' onSubmit={handleSubmit}>
