@@ -5,7 +5,6 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import { DarkModeContextProvider } from './context/darkModeContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

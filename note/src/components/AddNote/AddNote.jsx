@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useAddNoteMutation } from '../../slices/notesApiSlice';
 import axios from 'axios'
 
 import CryptoJS from 'crypto-js';
@@ -9,8 +8,6 @@ import CryptoJS from 'crypto-js';
 
 const AddNote = () => {
   const maxWords = 70;
-    const dispatch = useDispatch();
-    const [addNote, { isLoading }] = useAddNoteMutation();
     const { userInfo } = useSelector((state) => state.auth);
     const decryptData = (encryptedData, secretKey) => {
       const bytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
