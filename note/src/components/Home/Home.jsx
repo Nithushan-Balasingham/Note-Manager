@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../slices/authSlice';
 import { useLogoutMutation } from '../../slices/usersApiSlice';
 import CryptoJS from 'crypto-js';
-import { DarkModeContext } from "../../context/darkModeContext";
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
 const Home = () => {
@@ -26,7 +24,6 @@ const secretKey = process.env.REACT_APP_ENCRYPT_KEY;
   const[ own,SetOwn] = useState('')
   const [logoutApiCall] = useLogoutMutation();
   
-  const {active} = useContext(DarkModeContext);
 
   const logoutHandler = async () => {
     try {
